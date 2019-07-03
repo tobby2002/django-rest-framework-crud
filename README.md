@@ -88,7 +88,7 @@ The API has some restrictions:
 
 ### Commands
 ```
-http http://127.0.0.1:8000/api/v1/movies/ "Authorization: Token <YOUR_TOKEN>"
+http http://127.0.0.1:8000/api/v1/movies/ "Authorization: Token b5626c9a24f9fda8ae129746925ecb8c6ebbac87"
 http GET http://127.0.0.1:8000/api/v1/movies/3 "Authorization: Token <YOUR_TOKEN>"
 http POST http://127.0.0.1:8000/api/v1/movies/ "Authorization: Token <YOUR_TOKEN>" title="Ant Man and The Wasp" genre="Action" year=2018
 http PUT http://127.0.0.1:8000/api/v1/movies/3 "Authorization: Token <YOUR_TOKEN>" title="AntMan and The Wasp" genre="Action" year=2018
@@ -104,4 +104,28 @@ http http://127.0.0.1:8000/api/v1/movies/?page=3&page_size=15 "Authorization: To
 ```
 
 Finally, I provide a DB to make these tests.
+
+python manage.py runserver
+
+### add a model
+https://www.digitalocean.com/community/tutorials/how-to-create-django-models
+python manage.py startapp recommands
+### migration
+https://wayhome25.github.io/django/2017/03/20/django-ep6-migrations/
+# 마이그레이션 파일 생성
+$ python manage.py makemigrations <app-name>
+
+# 마이그레이션 적용
+$ python manage.py migrate <app-name>
+
+# 마이그레이션 적용 현황
+$ python manage.py showmigrations <app-name>
+
+# 지정 마이그레이션의 SQL 내역
+ python manage.py sqlmigrate <app-name> <migration-name>
+ 
+http POST http://127.0.0.1:8000/api/v1/recommands/ label=1 qid=2 f1=1.0 f2=0.0 f3=1.0 f4=2.0 f5=1.0 f6=1.0 f7=1.0 f8=1.0 f9=1.0 f10=1.0 docid=1 q="query02" title="title02 Ant Man and The Wasp" content="Action content 01"
+http http://127.0.0.1:8000/api/v1/recommands/
+
+
 
